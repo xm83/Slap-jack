@@ -1,0 +1,6 @@
+#! /bin/bash
+
+git add .
+git commit -m "deploying to heroku"
+git push heroku master:master
+heroku logs --tail
