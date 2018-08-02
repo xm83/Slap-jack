@@ -4,18 +4,20 @@ $(document).ready(function() {
   $('#startGame').prop('disabled', true);
   $('#playCard').prop('disabled', true);
   $('#slap').prop('disabled', true);
+  $('#restart').hide();
 
   // Establish a connection with the server
   var socket = io();
 
   // Stores the current user
-  var user = null;
+  var user = null; 
 
   socket.on('connect', function() {
     console.log('Connected');
 
     // hide the loading container and show the main container
     $('.connecting-container').hide();
+    $('#restart').hide();
     $('.main-container').show();
     let result = localStorage.getItem('id');
     if (result !== null) {
@@ -26,8 +28,27 @@ $(document).ready(function() {
       $('#startGame').prop('disabled', true);
       $('#playCard').prop('disabled', false);
       $('#slap').prop('disabled', false);
+      
     }
   });
+  
+  socket.on('restart', function (){
+    console.log("here restart");
+    $('#usernameDisplay').text('');
+    $('#joinGame').prop('disabled', false);
+    $('#observeGame').prop('disabled', false);
+    $('.main-container').show();
+    $('.connecting-container').hide();
+    $('#restart').hide();
+  })
+
+
+  socket.on('end', function () {
+    $('#restart').prop('disabled', false);
+    $('#startGame').prop('disabled', true);
+    $('#playCard').prop('disabled', true);
+    $('#slap').prop('disabled', true);
+  })
 
   socket.on('username', function(data) {
     if (data === false) {
@@ -114,6 +135,8 @@ $(document).ready(function() {
       $('.main-container').hide();
       $('.connecting-container').text(gameState.win + ' has won the game!');
       $('.connecting-container').show();
+      $('#restart').show();
+      $('#restart').prop('disabled', false);
     }
     window.state = gameState; // ???
   })
@@ -134,6 +157,7 @@ $(document).ready(function() {
   socket.on('errorMessage', function(data) {
     alert(data);
   })
+
 
   // Click handlers
   $('#startGame').on('click', function(e) {
@@ -173,6 +197,11 @@ $(document).ready(function() {
   $('#slap').on('click', function(e) {
     e.preventDefault();
     socket.emit('slap', null);
+  });
+
+  $('#restart').on('click', function(e) {
+    e.preventDefault();
+    socket.emit('restart', null);
   });
 
 });

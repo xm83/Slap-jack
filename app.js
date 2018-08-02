@@ -34,7 +34,7 @@ app.get('/rules', function(req, res){
 
 var Card = require('./card');
 var Player = require('./player');
-var Game = require('./game');
+var Game = require('./game'); 
 var game = new Game();
 var count = 0; // Number of active socket connections
 var winner = null; // Username of winner
@@ -55,9 +55,17 @@ io.on('connection', function(socket) {
     }
   });
 
+  socket.on('restart', function () {
+    console.log("heard restart");
+    game = new Game();
+    winner = null;
+    io.emit('restart', null);
+  })
+
   socket.on('username', function(data) {
     if (winner) {
-      socket.emit('errorMessage', `${winner} has won the game. Restart the server to start a new game.`);
+      console.log("should emit end")
+      socket.emit('end', null);
       return;
     }
     if (typeof(data) === "string") {
@@ -109,7 +117,8 @@ io.on('connection', function(socket) {
 
   socket.on('start', function() {
     if (winner) {
-      socket.emit('errorMessage', `${winner} has won the game. Restart the server to start a new game.`);
+      
+      socket.emit('end', null);
       return;
     }
     if (!socket.playerId) {
@@ -129,7 +138,8 @@ io.on('connection', function(socket) {
 
   socket.on('playCard', function() {
     if (winner) {
-      socket.emit('errorMessage', `${winner} has won the game. Restart the server to start a new game.`);
+      
+      socket.emit('end', null);
       return;
     }
     if (!socket.playerId) {
@@ -151,7 +161,8 @@ io.on('connection', function(socket) {
 
   socket.on('slap', function() {
     if (winner) {
-      socket.emit('errorMessage', `${winner} has won the game. Restart the server to start a new game.`);
+      
+      socket.emit('end', null);
       return;
     }
     if (!socket.playerId) {
