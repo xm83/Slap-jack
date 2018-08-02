@@ -1,0 +1,46 @@
+<h2>Game Room</h2>
+<hr>
+<div class="connecting-container alert alert-warning" role="alert">
+  <h3>Connecting to server...</h3>
+  
+</div>
+
+<div class="main-container">
+  
+  <button type="button" id="joinGame" class="btn btn-primary">
+    Join as Player
+  </button>
+  <button type="button" id="observeGame" class="btn btn-primary">
+    Join as Observer
+  </button>
+  <br><br>
+  <button type="button" id="startGame" class="btn btn-dark">
+    Start Game
+  </button>
+  <br><br>
+  <button type="button" id="playCard" class="btn btn-success">
+    Play Card
+  </button>
+  <button type="button" id="slap" class="btn btn-warning">
+    Slap!
+  </button>
+</div>
+
+<div class="container">
+  <br>
+  <strong><p class="text-success" id="usernameDisplay"></p></strong>
+  <p class="num text-secondary">
+    <span><strong>Players in Game:</strong></span> <span class="playerNames"></span>
+  </p>
+  <br>
+  <p class="text-dark">
+    <span><strong> Number of Cards in your hand: </strong></span> <span class="numCards"></span>
+  </p>
+  <strong><p class="text-info currentPlayerUsername"></p></strong>
+</div>
+<div class="alert alert-info" role="alert" id="messages-container"></div>
+<br>
+<h4 id="pileDisplay"></h4>
+<img id="card" src="" style="width: 200px; margin-top: 20px">
+  
+
