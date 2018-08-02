@@ -1,6 +1,7 @@
 # Slapjack
-Multiplayer card game _Slapjack_ using WebSockets
+Multiplayer card game _Slapjack_ 
 
+Invite friends to play with you by sending them the heroku website link above! (If you ever want to play against yourself, just open each tab in a different browser...)
 
 ## Rules of Slapjack 🃏
 
