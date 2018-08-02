@@ -21,7 +21,7 @@ $(document).ready(function() {
     $('.main-container').show();
     let result = localStorage.getItem('id');
     if (result !== null) {
-      // rejoin the room as the user with current game state
+      // rejoin as the user with current game state
       socket.emit('username', {
         id: result
       });
@@ -63,6 +63,7 @@ $(document).ready(function() {
     $('#observeGame').prop('disabled', true);
     $('#startGame').prop('disabled', false);
     $('#usernameDisplay').text('Joined game as ' + data.username);
+    // store username and playerId in the user variable so represent an existing playing user
     user = data;
     localStorage.setItem('id', data.id);
   });
@@ -138,12 +139,12 @@ $(document).ready(function() {
       $('#restart').show();
       $('#restart').prop('disabled', false);
     }
-    window.state = gameState; // ???
+    window.state = gameState; // store gameState in global variable window's state in case we need it
   })
 
   socket.on('disconnect', function() {
     // refresh on disconnect
-    window.location = window.location; // ???
+    window.location = window.location;  // .location is just the url; this is equiavelent to window.location.reload()
   });
 
   // This handler is called when a player joins an already started game

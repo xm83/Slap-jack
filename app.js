@@ -27,7 +27,7 @@ app.use(morgan('tiny'));
 app.get('/', function(req, res) {
   res.render('index');
 });
-
+ 
 app.get('/rules', function(req, res){
   res.render('rules');
 })
@@ -101,6 +101,7 @@ io.on('connection', function(socket) {
           });
           io.emit('updateGame', getGameState()); // broadcast to everyone
         } else {
+          // also allows user to have a new username when starting a new game
           socket.emit('username', false);
         }
       }
