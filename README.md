@@ -1,4 +1,4 @@
-# Slapjack
+# Slap!jack
 Hi peeps, welcome to the one-and-only multiplayer card game _Slapjack_!
 
 You will need at least 2 players to start a game! Invite friends to play with you by sending them the heroku website link above! 
