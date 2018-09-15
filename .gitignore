@@ -37,7 +37,3 @@ jspm_packages
 .node_repl_history
 store.json
 
-# test
-tests.js
-spec
-jasmine.json
