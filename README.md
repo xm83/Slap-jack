@@ -1,9 +1,9 @@
-# Slap!jack
-Hi peeps, welcome to the one-and-only multiplayer card game _Slapjack_!
+# 🃏 Slap!jack 🃏
+Welcome to the one-and-only multiplayer card game _Slapjack_!
 
-You will need at least 2 players to start a game! Invite friends to play with you by sending them the heroku website link above! 
+You will need at least 2 players to start a game. Invite friends to play with you by sending them the heroku website link above! 
 
-## Usage 🃏
+## Usage 
 Navigating this game app is really intuitive. You will be guided to enter your username, and then you can choose to join a game as a player or an observer (which means you can't do anything other than watching - _you can only be an observer if you join an already started game_). The 'Start Game' button will be enabled as soon as there are at least 2 players. 
 
 Once game is started, each player will play a card in turn by pressing the 'Play Card' button; you will be warned and stopped if you try to play out of turn. You can slap the pile at any time by pressing the 'Slap' button. If you're the fastest to slap, you will be alerted the consequence of your action (winning / losing), and other players will be notified of that consequence too!
@@ -14,7 +14,7 @@ Any time you are unsure about the rules, you can view the rules by clicking the 
 
 Note that during the game, you will only be able to see the top card in the pile. Time to use your awesome working memory and your fast reaction to conquer the kingdom of Slapjack!
 
-## Rules of Slapjack 🃏
+## Rules of Slapjack
 
 In Slapjack, the objective of the game is to win the entire deck of cards (52 cards).
 
