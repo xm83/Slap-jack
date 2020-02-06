@@ -1,7 +1,7 @@
 # 🃏 Slap!jack 🃏
 Welcome to the one-and-only multiplayer card game _Slapjack_!
 
-You will need at least 2 players to start a game. Invite friends to play with you by sending them the heroku website link: https://safe-woodland-73241.herokuapp.com/!
+You will need at least 2 players to start a game. Invite friends to play with you by sending them the heroku website link: https://safe-woodland-73241.herokuapp.com/! (Alternatively, you could open two browser windows, one incognito, to pretend like you're two different people)
 
 ## Usage :page_with_curl:
 Navigating this game app is really intuitive. You will be guided to enter your username, and then you can choose to join a game as a player or an observer (which means you can't do anything other than watching - _you can only be an observer if you join an already started game_). The 'Start Game' button will be enabled as soon as there are at least 2 players. 
